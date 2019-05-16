@@ -5,22 +5,25 @@ import random
 import argparse
 
 ''' Parsing the arguments 
-(base) D:\>python datagen.py --help
-usage: datagen.py [-h] [--o O] [--c C] [--r R] [--cs CS [CS ...]] [--d D]
+(base) D:\>python sfuzzer.py --help
+usage: sfuzzer.py [-h] [--o O]
+                  [--p {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49}]
+                  [--d D] [--s S]
+                  InputFileName
 
-A Simple Data Generator
-***********************
-row delimiter = Space
-column delimiter = New line
+A Simple File Fuzzer
+********************
+
+positional arguments:
+  InputFileName         Input File Name to be fuzzed
 
 optional arguments:
   -h, --help            show this help message and exit
-  --o O                 Name of Output Data File
-  --c C                 No of columns
-  --r R                 No of rows
-  --cs CS [CS ...], --list CS [CS ...]
-                        Space separated list of colum sizes
+  --o O                 Name of Output Fuzzed File
+  --p {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49}
+                        Percentage of Bytes to be fuzzed
   --d D                 Debug Level: INFO, DEBUG, WARNING
+  --s S                 Seed Value : Any random integer
 
 Contact:- joysn1980@yahoo.com
 '''
@@ -31,7 +34,7 @@ Contact:- joysn1980@yahoo.com
 ''')
 parser.add_argument('InputFileName', help='Input File Name to be fuzzed')
 parser.add_argument('--o', help='Name of Output Fuzzed File')
-parser.add_argument('--p', help='Percentage of Bytes to be fuzzed ',type=int,default=50, choices=range(0, 50)
+parser.add_argument('--p', help='Percentage of Bytes to be fuzzed ',type=int,default=50, choices=range(0, 50))
 parser.add_argument('--d', help='Debug Level: INFO, DEBUG, WARNING')
 parser.add_argument('--s', help='Seed Value : Any random integer', type= int, default= 0)
 
